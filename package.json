@@ -5,13 +5,19 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "nodemon index"
+    "dev": "nodemon index",
+    "build-css:dev": "postcss public/tailwind.css -o public/styles.css",
+    "build-css": "postcss public/tailwind.css -o public/styles.css --env production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "autoprefixer": "^10.3.3",
+    "cssnano": "^5.0.8",
+    "nodemon": "^2.0.12",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.8"
   },
   "dependencies": {
     "config": "^3.3.6",

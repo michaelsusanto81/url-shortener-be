@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/db');
+const path = require('path');
 
 const app = express();
 
@@ -7,6 +8,7 @@ const app = express();
 connectDB();
 
 app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

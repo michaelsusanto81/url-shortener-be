@@ -6,17 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Michaelsto URL Shortener</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <h1>Paste your Long URL here:</h1>
-  <form method="post" action="/">
-    <input type="text" name="longUrl">
-    <input type="text" name="urlCode">
-    <input type="submit" value="Add">
-  </form>
-  <p><%= shortUrl %></p>
-  <p><%= errMessage %></p>
+  <div class="table w-full h-screen text-base">
+    <div class="table-cell align-middle">
+      <div class="flex flex-col flex-wrap justify-center items-center">
+        <h1 class="text-2xl">
+          <a href="https://michaelsto.com" target="_blank" class="text-purple-700 font-semibold">Michaelsto</a> URL Shortener
+        </h1>
+        <br><br>
+        <form method="post" action="/" class="flex flex-col justify-center items-center">
+          <div class="flex flex-col justify-center items-center">
+            <h1 class="text-lg font-semibold">Paste your Long URL</h1>
+            <input required type="text" name="longUrl" class="rounded border border-purple-400 focus:border-purple-700 focus:ring focus:outline-none">
+          </div>
+          <br>
+          <div class="flex flex-col justify-center items-center">
+            <h1 class="text-lg font-semibold">Make your Short URL</h1>
+            <div>
+              <label for="urlCode"><%= baseUrl %>/</label>
+              <input required type="text" name="urlCode" class="rounded border border-purple-400 focus:border-purple-700 focus:ring focus:outline-none">
+            </div>            
+          </div>
+          <br>
+          <div class="flex flex-col justify-center items-center">
+            <button type="submit" class="px-4 py-2 rounded bg-purple-700 hover:bg-purple-800 text-white font-semibold">
+              Create
+            </button>
+          </div>
+        </form>
+        <br><br>
+        <p class="text-green-600 font-semibold"><%= shortUrl %></p>
+        <p class="text-red-600 font-semibold"><%= errMessage %></p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

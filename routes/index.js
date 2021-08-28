@@ -10,7 +10,8 @@ const Url = require('../models/Url');
 function renderHome(req, res) {
   res.render('index', {
     shortUrl: req.shortUrl,
-    errMessage: req.errMessage
+    errMessage: req.errMessage,
+    baseUrl: config.get('baseUrl')
   });
 }
 router.get('/', renderHome)
