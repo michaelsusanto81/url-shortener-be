@@ -21,6 +21,9 @@ Request body:
 }
 ```
 
+## User Interface
+- Access http://localhost on Browser to see in action (with User Interface)
+
 ## How to use
 - Build TailwindCSS
 ```
@@ -37,6 +40,3 @@ docker-compose up -d --build
 ```
 docker-compose down
 ```
-
-## Additional Notes
-There is also an additional endpoint that serves the Frontend's View by accessing the root (/) endpoint.
